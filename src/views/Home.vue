@@ -1,15 +1,21 @@
 <template>
     <div>
-        <div :class="[$style.header]">something</div>
+        <the-header></the-header>
     </div>
 </template>
 
 <script>
-export default {};
+import TheHeader from "@/components/Pages/TheHeader.vue";
+export default {
+    name: "HomePage",
+    components: {
+        TheHeader,
+    },
+};
 </script>
 
-<style lang="scss" module>
-.header {
-    background-color: var(--primary-color);
-}
+<style lang="scss">
+// .header {
+//     background-color: var(--primary-color);
+// }
 </style>

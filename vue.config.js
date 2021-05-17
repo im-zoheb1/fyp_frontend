@@ -1,5 +1,8 @@
+const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
+
 module.exports = {
   css: {
+    requireModuleExtension: true,
     loaderOptions: {
       sass: {
         prependData: `
@@ -9,5 +12,20 @@ module.exports = {
         `,
       },
     },
+  },
+  configureWebpack: {
+    plugins: [
+      new GoogleFontsPlugin({
+        fonts: [
+          {
+            family: "Poppins",
+            variants: ["300", "400", "500", "600", "700"],
+          },
+          {
+            family: "Lemon",
+          },
+        ],
+      }),
+    ],
   },
 };

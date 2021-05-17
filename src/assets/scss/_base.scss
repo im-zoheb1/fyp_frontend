@@ -27,7 +27,13 @@ html {
 
 body {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
   @include respond(tab-port) {
     padding: 0;
   }
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
 }

@@ -1,4 +1,5 @@
 :root {
+  // COLORS
   --primary-color: #407bff;
   --accent-color: #ea863e;
 
@@ -8,4 +9,28 @@
   --black-color-light-1: #333333;
   --black-color-light-2: #555555;
   --black-color-light-3: #777777;
+
+  // TEXT SIZES
+  --font-xs: 1.2rem;
+  --font-sm: 1.5rem;
+  --font-md: 1.8rem;
+  --font-lg: 2.2rem;
+
+  // HEADING SIZES
+  --heading-big: 4.2rem;
+
+  // LINE HEIGHT
+  --line-height-lg: 1.45;
+  --line-height-md: 1.32;
+  --line-height-sm: 1.2;
+
+  // FONT WEIGHTS
+  --weight-regular: 300;
+  --weight-medium: 500;
+  --weight-bold: 600;
+
+  // LETTER SPACING
+  --letter-spacing-big: 3px;
+  --letter-spacing-small: 1px;
+  --letter-spacing-md: 2px;
 }
