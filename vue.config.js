@@ -18,11 +18,11 @@ module.exports = {
       new GoogleFontsPlugin({
         fonts: [
           {
-            family: "Poppins",
-            variants: ["300", "400", "500", "600", "700"],
+            family: "Lemon",
           },
           {
-            family: "Lemon",
+            family: "Poppins",
+            variants: ["300", "400", "500", "600", "700"],
           },
         ],
       }),

@@ -1,23 +1,26 @@
 :root {
   // COLORS
-  --primary-color: #407bff;
+  --primary-color: #0099ff;
+  --primary-dark-color: #407bff;
   --accent-color: #ea863e;
 
-  --white-color: #f2f2f2;
+  --white-color-1: #ffffff;
+  --white-color-2: #fafafa;
 
-  --black-color: #000000;
+  --black-color: #252525;
   --black-color-light-1: #333333;
   --black-color-light-2: #555555;
   --black-color-light-3: #777777;
 
   // TEXT SIZES
-  --font-xs: 1.2rem;
+  --font-xs: 1.3rem;
   --font-sm: 1.5rem;
   --font-md: 1.8rem;
   --font-lg: 2.2rem;
 
   // HEADING SIZES
-  --heading-big: 4.2rem;
+  --heading-big: 3.6rem;
+  --heading-medium: 2.8rem;
 
   // LINE HEIGHT
   --line-height-lg: 1.45;
@@ -25,9 +28,11 @@
   --line-height-sm: 1.2;
 
   // FONT WEIGHTS
-  --weight-regular: 300;
+  --weight-light: 300;
+  --weight-regular: 400;
   --weight-medium: 500;
-  --weight-bold: 600;
+  --weight-semi-bold: 600;
+  --weight-bold: 700;
 
   // LETTER SPACING
   --letter-spacing-big: 3px;

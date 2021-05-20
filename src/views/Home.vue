@@ -1,16 +1,16 @@
 <template>
-    <div>
-        <the-header></the-header>
-    </div>
+  <div>
+    <the-header></the-header>
+  </div>
 </template>
 
 <script>
-import TheHeader from "@/components/Pages/TheHeader.vue";
+import TheHeader from "@/views/Home/TheHeader.vue";
 export default {
-    name: "HomePage",
-    components: {
-        TheHeader,
-    },
+  name: "HomePage",
+  components: {
+    TheHeader,
+  },
 };
 </script>
 
