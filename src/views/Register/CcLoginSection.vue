@@ -29,6 +29,7 @@
           ></cc-form-input>
         </cc-form-group>
         <cc-button
+          @click="window.replace('https://dashboard-ccidentifier.netlify.com')"
           class="section-form-btn btn btn-primary btn-sm btn-100"
         ></cc-button>
       </cc-form>

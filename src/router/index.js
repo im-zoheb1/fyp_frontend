@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Signup from "@/views/Signup.vue";
-import Classifier from "@/views/Classifier.vue";
+import Report from "@/views/Report.vue";
 
 const routes = [
   {
@@ -21,9 +21,9 @@ const routes = [
     component: Signup,
   },
   {
-    path: "/classifier",
-    name: "Classifier",
-    component: Classifier,
+    path: "/report",
+    name: "Report",
+    component: Report,
   },
 ];
 

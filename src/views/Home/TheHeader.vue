@@ -16,8 +16,10 @@
           <!-- header search bar -->
           <header-search-bar>
             <cc-search-text-field></cc-search-text-field>
-            <cc-button classes="btn btn-secondary btn-md">
-              Track
+            <cc-button
+              @click="$router.push('/report')"
+              classes="btn btn-secondary btn-md"
+            >
             </cc-button>
           </header-search-bar>
         </div>
