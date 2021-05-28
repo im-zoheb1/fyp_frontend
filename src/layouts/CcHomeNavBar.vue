@@ -2,13 +2,20 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-inner">
-        <div class="navbar-logo" style="visibility: hidden;">cc-Identifier</div>
+        <router-link
+          :to="{ name: 'Home' }"
+          class="navbar-logo"
+          :style="{ visibility: logo }"
+          style="color: #fff;"
+        >
+          cc-Identifier
+        </router-link>
         <div class="navbar-nav">
           <router-link :to="{ name: 'Login' }" class="navbar-link"
             >LOGIN</router-link
           >
           <router-link :to="{ name: 'Signup' }" class="navbar-link">
-            <cc-button classes="btn btn-white btn-sm">SIGN UP</cc-button>
+            <cc-button class="btn btn-white btn-sm">SIGN UP</cc-button>
           </router-link>
         </div>
       </div>
@@ -22,6 +29,11 @@ export default {
   name: "navbar",
   components: {
     CcButton,
+  },
+  props: {
+    logo: {
+      type: String,
+    },
   },
 };
 </script>
@@ -39,6 +51,8 @@ export default {
     font-family: "Lemon", cursive;
     font-size: var(--font-lg);
     color: var(--black-color);
+    cursor: pointer;
+    text-decoration: none;
   }
   &-nav {
     display: flex;

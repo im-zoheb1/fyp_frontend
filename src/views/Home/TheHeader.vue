@@ -14,13 +14,17 @@
             </div>
           </h1>
           <!-- header search bar -->
-          <header-search-bar>
-            <cc-search-text-field></cc-search-text-field>
-            <cc-button
-              @click="$router.push('/report')"
-              classes="btn btn-secondary btn-md"
-            >
-            </cc-button>
+          <header-search-bar
+            @submit.prevent="
+              $router.push({ name: 'Report', params: { id: trackingId } })
+            "
+          >
+            <cc-search-text-field
+              v-model="trackingId"
+              @keypress="isNumber($event)"
+              required
+            ></cc-search-text-field>
+            <cc-button classes="btn btn-secondary btn-md">Track</cc-button>
           </header-search-bar>
         </div>
         <div class="image-box">
@@ -32,17 +36,41 @@
 </template>
 
 <script>
+// COMPONENTS
 import CcButton from "@/components/Button/CcButton.vue";
 import CcSearchTextField from "@/components/Input/CcSearchTextField.vue";
 import CcHomeNavBar from "@/layouts/CcHomeNavBar.vue";
-
 import HeaderSearchBar from "@/components/SearchBar/HeaderSearchBar.vue";
+
+// LIBRARIES
+import { mapMutations, mapActions } from "vuex";
+
 export default {
   components: {
     HeaderSearchBar,
     CcButton,
     CcSearchTextField,
     CcHomeNavBar,
+  },
+  data() {
+    return {
+      trackingId: "",
+    };
+  },
+  methods: {
+    isNumber: function(evt) {
+      evt = evt ? evt : window.event;
+      var charCode = evt.which ? evt.which : evt.keyCode;
+      if (
+        charCode > 31 &&
+        (charCode < 48 || charCode > 57) &&
+        charCode !== 46
+      ) {
+        evt.preventDefault();
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>

@@ -2,7 +2,13 @@
   <div class="register">
     <cc-left-section>
       <template v-slot:text>Already have an account?</template>
-      <template v-slot:btn>Sign In</template>
+      <template v-slot:btn>
+        <cc-button
+          @click="$router.push('/login')"
+          class="btn btn-outline btn-white btn-md"
+          >Sign In</cc-button
+        >
+      </template>
     </cc-left-section>
     <cc-signup-section></cc-signup-section>
   </div>
@@ -11,12 +17,14 @@
 <script>
 import CcLeftSection from "@/views/Register/CcLeftSection.vue";
 import CcSignupSection from "@/views/Register/CcSignupSection.vue";
+import CcButton from "@/components/Button/CcButton.vue";
 
 export default {
   name: "Login",
   components: {
     CcLeftSection,
     CcSignupSection,
+    CcButton,
   },
 };
 </script>

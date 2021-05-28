@@ -11,12 +11,13 @@
       <p class="section-form-text">
         Login with data you entered during registration.
       </p>
-      <cc-form @submit.prevent>
+      <cc-form @submit.prevent="login">
         <cc-form-group>
           <cc-form-input
             class="section-form-input"
-            type="email"
+            type="text"
             label="Username"
+            v-model="username"
             required
           ></cc-form-input>
         </cc-form-group>
@@ -25,13 +26,17 @@
             class="section-form-input"
             type="password"
             label="Password"
+            v-model="password"
             required
           ></cc-form-input>
         </cc-form-group>
+        <cc-form-error v-if="failedMessage">{{ failedMessage }}</cc-form-error>
         <cc-button
-          @click="window.replace('https://dashboard-ccidentifier.netlify.com')"
           class="section-form-btn btn btn-primary btn-sm btn-100"
-        ></cc-button>
+          :disabled="validateForm"
+          :loadingStatus="loadingStatus"
+          >Log In</cc-button
+        >
       </cc-form>
     </div>
   </section>
@@ -42,6 +47,10 @@ import CcButton from "@/components/Button/CcButton.vue";
 import CcForm from "@/components/Form/CcForm.vue";
 import CcFormGroup from "@/components/Form/CcFormGroup.vue";
 import CcFormInput from "@/components/Form/CcFormInput.vue";
+import CcFormError from "@/components/Form/CcFormError.vue";
+
+import { mapActions } from "vuex";
+
 export default {
   name: "RightSection",
   components: {
@@ -49,6 +58,40 @@ export default {
     CcForm,
     CcFormGroup,
     CcFormInput,
+    CcFormError,
+  },
+  computed: {
+    username: {
+      get() {
+        return this.$store.state.login.username;
+      },
+      set(value) {
+        this.$store.commit("login/username", value);
+      },
+    },
+    password: {
+      get() {
+        return this.$store.state.login.password;
+      },
+      set(value) {
+        this.$store.commit("login/password", value);
+      },
+    },
+    loadingStatus() {
+      return this.$store.getters["login/loadingStatus"];
+    },
+    failedMessage() {
+      return this.$store.getters["login/failedMessage"];
+    },
+    validateForm() {
+      if (this.username && this.password) {
+        return false;
+      }
+      return true;
+    },
+  },
+  methods: {
+    ...mapActions("login", ["login"]),
   },
 };
 </script>

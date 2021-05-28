@@ -2,7 +2,12 @@
   // COLORS
   --primary-color: #0099ff;
   --primary-dark-color: #407bff;
+  --disabled-color: #8dadd6;
   --accent-color: #ea863e;
+
+  --shadow-color: #9ecaed;
+  --error-color: #d32f2f;
+  --success-color: #388e3c;
 
   --white-color-1: #ffffff;
   --white-color-2: #fafafa;
@@ -42,4 +47,6 @@
   // BOX SHADOW
   --box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%),
     0 1px 5px 0 rgb(0 0 0 / 12%);
+  --box-shadow-focus: 0 3px 1px -2px rgb(158 202 237 / 20%),
+    0 2px 2px 0 rgb(158 202 237 / 14%), 0 1px 5px 0 rgb(158 202 237 / 12%);
 }

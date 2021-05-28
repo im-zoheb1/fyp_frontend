@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import Signup from "@/views/Signup.vue";
 import Report from "@/views/Report.vue";
+import Verification from "@/views/Verification.vue";
 
 const routes = [
   {
@@ -21,9 +22,18 @@ const routes = [
     component: Signup,
   },
   {
-    path: "/report",
+    path: "/report/:id",
     name: "Report",
     component: Report,
+  },
+  {
+    path: "/verification/:username",
+    name: "Verification",
+    component: Verification,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
   },
 ];
 

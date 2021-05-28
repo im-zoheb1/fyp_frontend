@@ -6,9 +6,7 @@
     <p class="instructions-text">
       <slot name="text"></slot>
     </p>
-    <cc-button class="btn btn-outline btn-white btn-md">
-      <slot name="btn"></slot>
-    </cc-button>
+    <slot name="btn"></slot>
   </div>
 </template>
 

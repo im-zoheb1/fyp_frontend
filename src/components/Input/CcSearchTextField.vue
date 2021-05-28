@@ -1,9 +1,40 @@
 <template>
-  <input class="input-field" type="text" placeholder="Track your results" />
+  <div class="input">
+    <input
+      class="input-field"
+      type="text"
+      placeholder="Track your results"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      :required="required"
+    />
+  </div>
 </template>
 
+<script>
+export default {
+  props: {
+    required: {
+      type: Boolean,
+    },
+    modelValue: {
+      type: String,
+    },
+  },
+  methods: {
+    updateValue: function(value) {
+      this.$emit("input", value);
+    },
+  },
+};
+</script>
+
 <style lang="scss" scoped>
+.input {
+  display: flex;
+}
 .input-field {
+  flex: 1;
   max-width: 100%;
   width: 100%;
   margin-right: 1rem;

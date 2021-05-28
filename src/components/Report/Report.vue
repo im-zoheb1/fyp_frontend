@@ -1,6 +1,6 @@
 <template>
   <div class="report">
-    <div class="report-title">{{ title }}</div>
+    <div class="report-title" v-if="title">{{ title }}</div>
     <div class="report-content">
       <slot></slot>
     </div>
@@ -20,14 +20,16 @@ export default {
 
 <style lang="scss" scoped>
 .report {
-  padding: 2rem 3.5rem;
+  padding: 5rem;
   flex: 1;
   background-color: var(--white-color-2);
   max-width: 70rem;
   margin: 0 auto;
   margin-top: 5rem;
+  margin-bottom: 5rem;
   overflow-y: scroll;
   box-shadow: var(--box-shadow);
+  border-radius: 3px;
   &::-webkit-scrollbar {
     width: 0;
   }

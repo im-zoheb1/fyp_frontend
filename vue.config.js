@@ -1,5 +1,4 @@
 const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
-
 module.exports = {
   css: {
     requireModuleExtension: true,
